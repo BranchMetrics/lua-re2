@@ -111,7 +111,7 @@ local char_ptr_ty = ffi.typeof("char*");
 --    _M.whatever; otherwise, the shared object would be unloaded by Garbage-
 --    Collector.
 --
-local re2_c_lib = ffi.load("libre2c.so")
+local re2_c_lib = ffi.load(package.searchpath("libre2c", package.cpath))
 _M.re2_c_lib = re2_c_lib
 local re2c_compile = re2_c_lib.re2c_compile
 local re2c_match = re2_c_lib.re2c_match
